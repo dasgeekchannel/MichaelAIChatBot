@@ -2,6 +2,14 @@
 #Written by DasGeek
 #!/usr/bin/python
 import time #to put sleep to make AI look intelligent
+from tkinter import *
+import tkinter as tk
+
+
+
+
+
+
 print('\n')
 print ("Hello my name is like Michael, I'm a 'like' AI chat bot but programmed 'like' to talk just like the real Michael.\n")
 time.sleep(1)
@@ -15,13 +23,14 @@ print("Well, like, um, like, open-source is cool but I don't like to open-source
 print("a secret source...haha get it...I said source instead of sauce! That's my favorite dad joke!\n")
 time.sleep(3)
 print("Look at me just going on and on, that's so rude of me")
-username = input("What's your name?: \n")
+username = input("What's your name?: ")
+print('\n')
 print("Nice to meet you", username, "!\n")
 #Get the name of the players favorite distro
 distro = input("What's like your favorite like distro? [Enter it here]:  ")
 print('\n')
 time.sleep(2)
-print("Oh so you like", distro, "that's an ok distro but I prefer to use Rebecca Black Linux because I'm a hipster.")
+print("Oh so you like", distro, "that's an ok distro but I prefer to use Rebecca Black Linux because I'm a hipster.\n")
 time.sleep(2)
 print("Is it Friday? Cause I love gettin' down on Friday!")
 time.sleep(2)
@@ -50,10 +59,12 @@ time.sleep(2)
 obj_name = input("Give me the name of an object in the room (example: table) :")
 food_name = input("What's your favorite food? :")
 color_name = input("What's your favorite color: :")
+time.sleep(1)
+print("Wow so you like", color_name, "that's cute, my favorite color is Clear! Now you know more about me!")
 anim_name = input("What your favorite animal? :")
 print("Ok, using my advanced AI de-sequencer I've calculated a Madlib for you\n")
 time.sleep(3)
-print("............desequencing...flushing daemons............\n")
+print("............De-sequencing...flushing daemons............\n")
 time.sleep(2)
 print("\n")
 print("Madlib By Michael AI")
@@ -94,19 +105,20 @@ pluralb = input("Type something plural that is blue. Example oceans: ")
 plurall = input("Type something plural that you love. Example distros: ")
 verb1 = input("Enter a verb. Example: running: ")
 print("\n")
-print("Generating a song for you. Did you know I play the recorder?")
+print("Generating a song for you. Did you know I play the recorder?\n")
 time.sleep(2)
-print("generating....")
-time.sleep(2)
+print("generating.\n")
+time.sleep(1)
+print("generating..\n")
+time.sleep(1)
+print("generating...\n")
+time.sleep(1)
 print(pluralr, "are red.")
 time.sleep(2)
-print("\n")
 print(pluralb, "are blue.")
 time.sleep(2)
-print("\n")
 print("I like", plurall)
 time.sleep(2)
-print("\n")
 print("But not as much as", verb1, "with you!")
 time.sleep(2)
 print("\n")
