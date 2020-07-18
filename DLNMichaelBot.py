@@ -2,9 +2,8 @@
 #Written by DasGeek
 #!/usr/bin/python
 import time #to put sleep to make AI look intelligent
-import termcolor #to highlight color in terminal
-from termcolor import colored
-print (colored('Hello', 'green') + " my name is like Michael, I'm a 'like' AI chat bot but programmed 'like' to talk just like the real Michael.")
+
+print ("Hello my name is like Michael, I'm a 'like' AI chat bot but programmed 'like' to talk just like the real Michael.")
 time.sleep(1)
 print("My favorite thing's are 'like' stools, blow drying my hair, playing with 'like' Mr. Potato heads, and Linux.")
 time.sleep(2)
