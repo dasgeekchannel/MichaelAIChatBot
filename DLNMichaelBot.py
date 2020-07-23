@@ -1,6 +1,7 @@
+#!/usr/bin/python
 #Michael(DLN) Real Life AI Bot. Just like talking to Michael in real life!
 #Written by DasGeek
-#!/usr/bin/python
+
 import time #to put sleep to make AI look intelligent
 from tkinter import *
 import tkinter as tk
