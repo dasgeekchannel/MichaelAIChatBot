@@ -18,6 +18,8 @@ print("My favorite thing's are 'like' stools, blow drying my hair, playing with 
 time.sleep(2)
 print("I also love playing video games that have 'snipey' wifles in them.")
 time.sleep(1)
+print("Don't tell anyone but I have very weak thumbs and you know what makes my thumbs stronger? ACTIVE SITTING!")
+time.sleep(2)
 print("Before we go any further, I would just like to let you know that I've used Linux for 20 years.\n")
 time.sleep(2)
 print("Well, like, um, like, open-source is cool but I don't like to open-source my OBS scenes because like they're like,")
