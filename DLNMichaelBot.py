@@ -1,6 +1,20 @@
 #!/usr/bin/python
-#Michael(DLN) Real Life AI Bot. Just like talking to Michael in real life!
-#Written by DasGeek
+
+# Michael(DLN) Real Life AI Bot. Just like talking to Michael in real life!
+# Written by DasGeek
+#
+# Licensed under the Mozilla Public License Version 2.0
+# Fedora-License-Identifier: MPLv2.0
+# SPDX-License-Identifier: MPL-2.0
+#
+# This is free software.
+# For more information on free software, see
+# <https://www.gnu.org/philosophy/free-sw.en.html>.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at <https://mozilla.org/MPL/2.0/>.
+#
 
 import time #to put sleep to make AI look intelligent
 from tkinter import *
