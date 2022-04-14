@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 # Michael(DLN) Real Life AI Bot. Just like talking to Michael in real life!
 # Written by DasGeek
