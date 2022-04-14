@@ -17,13 +17,6 @@
 #
 
 import time #to put sleep to make AI look intelligent
-from tkinter import *
-import tkinter as tk
-
-
-
-
-
 
 print('\n')
 print ("Hello my name is like Michael, I'm a 'like' AI chat bot but programmed 'like' to talk just like the real Michael.\n")
