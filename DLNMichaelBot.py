@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 # Michael(DLN) Real Life AI Bot. Just like talking to Michael in real life!
 # Written by DasGeek
@@ -17,13 +17,6 @@
 #
 
 import time #to put sleep to make AI look intelligent
-from tkinter import *
-import tkinter as tk
-
-
-
-
-
 
 print('\n')
 print ("Hello my name is like Michael, I'm a 'like' AI chat bot but programmed 'like' to talk just like the real Michael.\n")
@@ -100,13 +93,13 @@ print("\n")
 #draw a stool
 print("*******************")
 print("  ***************  ")
-print( " **           **")
-print( " **           **")
-print( " **           **")
-print( " **           **")
-print( " **           **")
-print( " **           **")
-print( " **           **")
+print("  **           **")
+print("  **           **")
+print("  **           **")
+print("  **           **")
+print("  **           **")
+print("  **           **")
+print("  **           **")
 print("\n")
 print("It's a stool for active sitting!")
 time.sleep(2)
@@ -141,6 +134,7 @@ time.sleep(2)
 print("\n")
 time.sleep(3)
 print("Wow, look at the time. This has been so much fun. Thanks for talking with me!\n")
+print("If you want to support the show, go to dlnstore.com and buy yourself a Linux Is Everywhere T-short.")
 print("Remember the journey itself, is just as important as the Destination!")
 print("\n")
 print("Goodbye!")
