@@ -34,6 +34,15 @@ print("a secret source...haha get it...I said source instead of sauce! That's my
 time.sleep(3)
 print("Look at me just going on and on, that's so rude of me")
 username = input("What's your name?: ")
+
+# MichaelAI wants to be the only Michael. Luckily it gives up peacefully.
+if username == "Michael":
+    print("Hey! You can't be Michael! I am Michael.")
+    print('\n')
+    username = input("What's YOUR name?: ")
+    if username == "Michael":
+        print("Pfff, fine. You can be Michael.")
+
 print('\n')
 print("Nice to meet you", username, "!\n")
 #Get the name of the players favorite distro
