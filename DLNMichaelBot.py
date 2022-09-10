@@ -170,7 +170,7 @@ def muffincakes():
 
 def fin():
     print("Wow, look at the time. This has been so much fun. Thanks for talking with me!\n")
-    print("If you want to support the show, go to dlnstore.com and buy yourself a Linux Is Everywhere T-shirt.\n")
+    print("If you want to support the show, go to dlnstore.com and buy yourself a Linux Is Everywhere T-short.\n")
     print("Remember, the journey itself, is just as important as the Destination!\n")
     print("Goodbye!")
     quit(0)
