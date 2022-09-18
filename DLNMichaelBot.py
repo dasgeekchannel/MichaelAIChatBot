@@ -115,6 +115,69 @@ def designer():
     time.sleep(2)
     print("That was fun!")
 
+def icanhazdadjoke():
+    # Get a random bad joke. API maintainers ask for the specific tool name in User-Agent to help watch for abuse.
+    import ssl
+    import urllib.request
+    import urllib.error
+    url = 'https://icanhazdadjoke.com'
+    headers = {
+        'Accept': 'text/plain',
+        'User-Agent': 'Michael-AI (https://github.com/dasgeekchannel/MichaelAIChatBot)'
+        }
+    time.sleep(2)
+    print('\nOh, hey! Remember how I told that joke earlier?\n')
+    time.sleep(1)
+    print('Well I got pelenty of them!\n')
+    time.sleep(2)
+    print('Oh, I just remembered this one....')
+    time.sleep(2)
+    wantsbadjoke = True
+    while wantsbadjoke:
+        try:
+            ssl._create_default_https_context = ssl._create_unverified_context
+            req = urllib.request.Request(url, headers=headers)
+            with urllib.request.urlopen(req) as response:
+                canihazjoke = response.read().decode()
+            print('\n' + canihazjoke + '\n')
+            print("Ha, that was a lot of fun, wasn't it?\n")
+            time.sleep(2)
+            print("I could go all day! Want to hear another one?\n")
+            keepupthetorture = input('[y/n]: ')
+            if keepupthetorture in ['Y', 'y']:
+                print("\nAlright, let's see...\n\nOh! Here's one.")
+                time.sleep(2)
+                wantsbadjoke = True
+            elif keepupthetorture in ['N', 'n']:
+                print("\nOkay, but it's your loss!\n")
+                wantsbadjoke = False
+            elif keepupthetorture not in ['Y', 'y', 'N', 'n']:
+                print("\nWell, you didn't answer with a 'y' or a 'n' so I am just going to give you another piece of gold!\n")
+                time.sleep(2)
+                print('Here goes...')
+                time.sleep(1)
+                wantsbadjoke = True
+        except urllib.error.HTTPError as e:
+            escode = str(e)
+            e301 = '301: Moved Permanently'
+            e307 = '307: Temporary Redirect'
+            e400 = '400: Bad Request'
+            e401 = '401: Unauthorized'
+            e403 = '403: Forbidden'
+            e404 = '404: Not Found'
+            e408 = '408: Request Time-out'
+            e500 = '500: Internal Server Error'
+            e501 = '501: Not Implemented'
+            e502 = '502: Bad Gateway'
+            e503 = '503: Service Unavailable'
+            e504 = '504: Gateway Time-out'
+            e505 = '505: TTP Version not supported'
+            if escode in [e301, e307, e400, e401, e403, e404, e408, e500, e501, e502, e503, e504, e505]:
+                error_print = escode.split(': ')
+                print('Aw man, I got an error code. I think it was ' + error_print[0])
+                print('I think that means ' + error_print[1] + 'but who knows. Maybe next time...')
+                wantsbadjoke = False
+
 def lastgame():
     time.sleep(2)
     print("Ok one more game")
@@ -172,6 +235,7 @@ def fin():
     print("Wow, look at the time. This has been so much fun. Thanks for talking with me!\n")
     print("If you want to support the show, go to dlnstore.com and buy yourself a Linux Is Everywhere T-short.\n")
     print("Remember, the journey itself, is just as important as the Destination!\n")
+    time.sleep(1)
     print("Goodbye!")
     quit(0)
 
@@ -192,6 +256,7 @@ def init():
     age()
     madlib()
     designer()
+    icanhazdadjoke()
     lastgame()
     muffincakes()
     fin()
