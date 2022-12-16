@@ -231,6 +231,21 @@ def muffincakes():
         print("J/K, I know it is!\nWho else is going to choose dumbcakes!\n\n")
     time.sleep(3)
 
+def ubuntusummit():
+    print("Did you know that in 2022 I gave a talk at the Ubuntu Summit?")
+    time.sleep(1)
+    print("Ryan almost made me miss it, getting me sick and all, but whatever. He can't hold me back!")
+    time.sleep(1)
+    print("")
+    print("If you would like to watch the talk I gave at the Ubuntu Summit, you can watch it on YouTube!")
+    time.sleep(1)
+    print("The link is: https://www.youtube.com/watch?v=D2TKlxdpmus")
+    time.sleep(1)
+    print(" ")
+    print("You can also just go to YouTube and search for 'Ubuntu Summit 2022 | Open Source Marketing Done Right'")
+    print(" ")
+    time.sleep(2)
+
 def fin():
     print("Wow, look at the time. This has been so much fun. Thanks for talking with me!\n")
     print("If you want to support the show, go to dlnstore.com and buy yourself a Linux Is Everywhere T-short.\n")
@@ -259,6 +274,7 @@ def init():
     icanhazdadjoke()
     lastgame()
     muffincakes()
+    ubuntusummit()
     fin()
 
 if __name__ == "__main__":
