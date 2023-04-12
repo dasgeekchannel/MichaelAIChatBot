@@ -1,6 +1,5 @@
 use std::io::Write;
 use std::{thread, time};
-use ureq::Error;
 
 fn main() {
     let michael = Michael::new();
@@ -166,7 +165,7 @@ impl Michael {
                 .set("User-Agent", "Michael-AI (https://github.com/dasgeekchannel/MichaelAIChatBot)")
                 .call() {
                 Ok(response) => {
-                    println!("\n{:?}", response.into_string().unwrap());
+                    println!("\n{:?}", response.into_string().unwrap().replace("\\n", "\n"));
                     println!("Ha, that was a lot of fun, wasn't it?");
                     self.sleep(2);
                     println!("I could go all day! Want to hear another one?");
@@ -174,29 +173,34 @@ impl Michael {
                     self.prompt("[y/n]: ");
                     std::io::stdin().read_line(&mut keep_up_the_torture).unwrap();
                     let keep_up_the_torture = keep_up_the_torture.chars().next().unwrap();
-                    if ['Y', 'y'].contains(&keep_up_the_torture) {
-                        print!("\nAlright, let's see...\n\nOh! Here's one.");
-                        self.sleep(2);
-                        wantsbadjoke = true;
-                    } else if ['N', 'n'].contains(&keep_up_the_torture) {
-                        println!("\nOkay, but it's your loss!");
-                        wantsbadjoke = false;
-                    } else {
-                        println!("\nWell, you didn't answer with a 'y' or a 'n' so I am just going to give you another piece of gold!");
-                        self.sleep(2);
-                        print!("Here goes...");
-                        self.sleep(1);
-                        wantsbadjoke = true;
+                    match keep_up_the_torture {
+                        'Y' | 'y' => {
+                            print!("\nAlright, let's see...\n\nOh! Here's one.");
+                            self.sleep(2);
+                            wantsbadjoke = true;
+                        },
+                        'N' | 'n' => {
+                            println!("\nOkay, but it's your loss!");
+                            wantsbadjoke = false;
+                        },
+                        _ => {
+                            println!("\nWell, you didn't answer with a 'y' or a 'n' so I am just going to give you another piece of gold!");
+                            self.sleep(2);
+                            print!("Here goes...");
+                            self.sleep(1);
+                            wantsbadjoke = true;
+                        },
                     }
                 },
-                Err(Error::Status(code, response)) => {
+                Err(ureq::Error::Status(code, response)) => {
                     /* the server returned an unexpected status
                        code (such as 400, 500 etc) */
                     eprintln!("{code}: {:?}", response);
                     wantsbadjoke = false;
                 }
-                Err(_) => {
+                Err(err) => {
                     /* some kind of io/transport error */
+                    eprintln!("{:?}", err);
                     wantsbadjoke = false;
                 }
             }
