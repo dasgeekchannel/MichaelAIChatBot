@@ -21,9 +21,13 @@ impl Michael {
         std::io::stdout().flush().unwrap();
     }
 
-    fn prompt(&self, question: &str) {
+    #[must_use]
+    fn prompt(&self, question: &str) -> String{
+        let mut value = String::new();
         print!("{question}");
         self.flush_output();
+        std::io::stdin().read_line(&mut value).unwrap();
+        value.trim().to_string()
     }
 
     fn intro(&self) {
@@ -45,17 +49,13 @@ impl Michael {
     }
 
     fn name(&self) {
-        let mut username = String::new();
-        self.prompt("What's your name?: ");
-        std::io::stdin().read_line(&mut username).unwrap();
+        let username = self.prompt("What's your name?: ");
         println!("Nice to meet you {}", username.trim());
     }
 
     fn distro(&self) {
         // Get the name of the players favorite distro
-        let mut distro = String::new();
-        self.prompt("What's like your favorite like distro? [Enter it here]: ");
-        std::io::stdin().read_line(&mut distro).unwrap();
+        let distro = self.prompt("What's like your favorite like distro? [Enter it here]: ");
         self.sleep(2);
         println!("Oh so you like {}. That's an ok distro but I prefer to use Rebecca Black Linux because I'm a hipster.", distro.trim());
         self.sleep(2);
@@ -65,10 +65,8 @@ impl Michael {
 
     fn age(&self) {
         loop {
-            let mut age_quest = String::new();
             // Get users age
-            self.prompt("How old are you anyways?: ");
-            std::io::stdin().read_line(&mut age_quest).unwrap();
+            let age_quest = self.prompt("How old are you anyways?: ");
             // Error check for integer
             match age_quest.trim().parse::<i32>() {
                 Ok(age) => {
@@ -96,23 +94,12 @@ impl Michael {
         self.sleep(2);
         // Michael AI Mad Lib Section
         // Get series of questions for inputting into madlib
-        let mut obj_name = String::new();
-        self.prompt("Give me the name of an object in the room (example: table): ");
-        std::io::stdin().read_line(&mut obj_name).unwrap();
-        let mut food_name = String::new();
-        self.prompt("What's your favorite food?: ");
-        std::io::stdin().read_line(&mut food_name).unwrap();
-        food_name = food_name.trim().to_string();
-        let mut color_name = String::new();
-        self.prompt("What's your favorite color: ");
-        std::io::stdin().read_line(&mut color_name).unwrap();
-        color_name = color_name.trim().to_string();
+        let _obj_name = self.prompt("Give me the name of an object in the room (example: table): ");
+        let food_name = self.prompt("What's your favorite food?: ");
+        let color_name = self.prompt("What's your favorite color: ");
         self.sleep(1);
         println!("Wow so you like {color_name}? That's cute, my favorite color is Clear! Now you know more about me!");
-        let mut anim_name = String::new();
-        self.prompt("What's your favorite animal?: ");
-        std::io::stdin().read_line(&mut anim_name).unwrap();
-        anim_name = anim_name.trim().to_string();
+        let anim_name = self.prompt("What's your favorite animal?: ");
         println!("Ok, using my advanced AI de-sequencer I've calculated a Madlib for you");
         self.sleep(3);
         println!("............De-sequencing...flushing daemons............");
@@ -169,9 +156,7 @@ impl Michael {
                     println!("Ha, that was a lot of fun, wasn't it?");
                     self.sleep(2);
                     println!("I could go all day! Want to hear another one?");
-                    let mut keep_up_the_torture = String::new();
-                    self.prompt("[y/n]: ");
-                    std::io::stdin().read_line(&mut keep_up_the_torture).unwrap();
+                    let keep_up_the_torture = self.prompt("[y/n]: ");
                     let keep_up_the_torture = keep_up_the_torture.chars().next().unwrap();
                     match keep_up_the_torture {
                         'Y' | 'y' => {
@@ -214,22 +199,10 @@ impl Michael {
         println!("Let's make a song!");
         self.sleep(2);
         // song input
-        let mut pluralr = String::new();
-        self.prompt("Type something plural that is red. Example roses: ");
-        std::io::stdin().read_line(&mut pluralr).unwrap();
-        pluralr = pluralr.trim().to_string();
-        let mut pluralb = String::new();
-        self.prompt("Type something plural that is blue. Example oceans: ");
-        std::io::stdin().read_line(&mut pluralb).unwrap();
-        pluralb = pluralb.trim().to_string();
-        let mut plurall = String::new();
-        self.prompt("Type something plural that you love. Example distros: ");
-        std::io::stdin().read_line(&mut plurall).unwrap();
-        plurall = plurall.trim().to_string();
-        let mut verb1 = String::new();
-        self.prompt("Enter a verb. Example: running: ");
-        std::io::stdin().read_line(&mut verb1).unwrap();
-        verb1 = verb1.trim().to_string();
+        let pluralr = self.prompt("Type something plural that is red. Example roses: ");
+        let pluralb = self.prompt("Type something plural that is blue. Example oceans: ");
+        let plurall = self.prompt("Type something plural that you love. Example distros: ");
+        let verb1 = self.prompt("Enter a verb. Example: running: ");
         println!();
         println!("Generating a song for you. Did you know I play the recorder?");
         self.sleep(2);
@@ -258,10 +231,8 @@ impl Michael {
         println!("Oh shoot, I forgot one thing!");
         self.sleep(2);
         loop {
-            let mut muffincakes = String::new();
-            self.prompt("Muffins or Cupcakes?: ");
-            std::io::stdin().read_line(&mut muffincakes).unwrap();
-            match muffincakes.trim() {
+            let muffincakes = self.prompt("Muffins or Cupcakes?: ");
+            match muffincakes.as_str() {
                 "Muffin" | "muffin" | "Muffins" | "muffins" => {
                     print!("Thank you.");
                     self.flush_output();
