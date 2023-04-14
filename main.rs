@@ -22,7 +22,7 @@ impl Michael {
     }
 
     #[must_use]
-    fn prompt(&self, question: &str) -> String {
+    fn input(&self, question: &str) -> String {
         let mut value = String::new();
         print!("{question}");
         self.flush_output();
@@ -49,13 +49,13 @@ impl Michael {
     }
 
     fn name(&self) {
-        let username = self.prompt("What's your name?: ");
+        let username = self.input("What's your name?: ");
         println!("Nice to meet you {}", username.trim());
     }
 
     fn distro(&self) {
         // Get the name of the players favorite distro
-        let distro = self.prompt("What's like your favorite like distro? [Enter it here]: ");
+        let distro = self.input("What's like your favorite like distro? [Enter it here]: ");
         self.sleep(2);
         println!("Oh so you like {}. That's an ok distro but I prefer to use Rebecca Black Linux because I'm a hipster.", distro.trim());
         self.sleep(2);
@@ -66,7 +66,7 @@ impl Michael {
     fn age(&self) {
         loop {
             // Get users age
-            let age_quest = self.prompt("How old are you anyways?: ");
+            let age_quest = self.input("How old are you anyways?: ");
             // Error check for integer
             match age_quest.trim().parse::<i32>() {
                 Ok(age) => {
@@ -94,12 +94,12 @@ impl Michael {
         self.sleep(2);
         // Michael AI Mad Lib Section
         // Get series of questions for inputting into madlib
-        let _obj_name = self.prompt("Give me the name of an object in the room (example: table): ");
-        let food_name = self.prompt("What's your favorite food?: ");
-        let color_name = self.prompt("What's your favorite color: ");
+        let _obj_name = self.input("Give me the name of an object in the room (example: table): ");
+        let food_name = self.input("What's your favorite food?: ");
+        let color_name = self.input("What's your favorite color: ");
         self.sleep(1);
         println!("Wow so you like {color_name}? That's cute, my favorite color is Clear! Now you know more about me!");
-        let anim_name = self.prompt("What's your favorite animal?: ");
+        let anim_name = self.input("What's your favorite animal?: ");
         println!("Ok, using my advanced AI de-sequencer I've calculated a Madlib for you");
         self.sleep(3);
         println!("............De-sequencing...flushing daemons............");
@@ -163,7 +163,7 @@ impl Michael {
                     println!("Ha, that was a lot of fun, wasn't it?");
                     self.sleep(2);
                     println!("I could go all day! Want to hear another one?");
-                    let keep_up_the_torture = self.prompt("[y/n]: ");
+                    let keep_up_the_torture = self.input("[y/n]: ");
                     let keep_up_the_torture = keep_up_the_torture.chars().next().unwrap();
                     match keep_up_the_torture {
                         'Y' | 'y' => {
@@ -206,10 +206,10 @@ impl Michael {
         println!("Let's make a song!");
         self.sleep(2);
         // song input
-        let pluralr = self.prompt("Type something plural that is red. Example roses: ");
-        let pluralb = self.prompt("Type something plural that is blue. Example oceans: ");
-        let plurall = self.prompt("Type something plural that you love. Example distros: ");
-        let verb1 = self.prompt("Enter a verb. Example: running: ");
+        let pluralr = self.input("Type something plural that is red. Example roses: ");
+        let pluralb = self.input("Type something plural that is blue. Example oceans: ");
+        let plurall = self.input("Type something plural that you love. Example distros: ");
+        let verb1 = self.input("Enter a verb. Example: running: ");
         println!();
         println!("Generating a song for you. Did you know I play the recorder?");
         self.sleep(2);
@@ -238,7 +238,7 @@ impl Michael {
         println!("Oh shoot, I forgot one thing!");
         self.sleep(2);
         loop {
-            let muffincakes = self.prompt("Muffins or Cupcakes?: ");
+            let muffincakes = self.input("Muffins or Cupcakes?: ");
             match muffincakes.as_str() {
                 "Muffin" | "muffin" | "Muffins" | "muffins" => {
                     print!("Thank you.");
