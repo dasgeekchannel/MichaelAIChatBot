@@ -22,7 +22,7 @@ impl Michael {
     }
 
     #[must_use]
-    fn prompt(&self, question: &str) -> String{
+    fn prompt(&self, question: &str) -> String {
         let mut value = String::new();
         print!("{question}");
         self.flush_output();
@@ -149,10 +149,17 @@ impl Michael {
         while wantsbadjoke {
             match ureq::get("https://icanhazdadjoke.com")
                 .set("Accept", "text/plain")
-                .set("User-Agent", "Michael-AI (https://github.com/dasgeekchannel/MichaelAIChatBot)")
-                .call() {
+                .set(
+                    "User-Agent",
+                    "Michael-AI (https://github.com/dasgeekchannel/MichaelAIChatBot)",
+                )
+                .call()
+            {
                 Ok(response) => {
-                    println!("\n{:?}", response.into_string().unwrap().replace("\\n", "\n"));
+                    println!(
+                        "\n{:?}",
+                        response.into_string().unwrap().replace("\\n", "\n")
+                    );
                     println!("Ha, that was a lot of fun, wasn't it?");
                     self.sleep(2);
                     println!("I could go all day! Want to hear another one?");
@@ -163,23 +170,23 @@ impl Michael {
                             print!("\nAlright, let's see...\n\nOh! Here's one.");
                             self.sleep(2);
                             wantsbadjoke = true;
-                        },
+                        }
                         'N' | 'n' => {
                             println!("\nOkay, but it's your loss!");
                             wantsbadjoke = false;
-                        },
+                        }
                         _ => {
                             println!("\nWell, you didn't answer with a 'y' or a 'n' so I am just going to give you another piece of gold!");
                             self.sleep(2);
                             print!("Here goes...");
                             self.sleep(1);
                             wantsbadjoke = true;
-                        },
+                        }
                     }
-                },
+                }
                 Err(ureq::Error::Status(code, response)) => {
                     /* the server returned an unexpected status
-                       code (such as 400, 500 etc) */
+                    code (such as 400, 500 etc) */
                     eprintln!("{code}: {:?}", response);
                     wantsbadjoke = false;
                 }
