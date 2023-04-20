@@ -136,6 +136,7 @@ impl Michael {
         println!("That was fun!");
     }
 
+    #[cfg(feature = "dadjokes")]
     fn icanhazdadjoke(&self) {
         // Get a random bad joke. API maintainers ask for the specific tool name in User-Agent to help watch for abuse.
         self.sleep(2);
@@ -256,7 +257,7 @@ impl Michael {
                     println!(".\nVINDICATION!");
                 }
                 "Cupcakes" | "cupcakes" | "Cupcake" | "cupcake" => {
-                    print!("Ryan, is that you?");
+                    println!("Ryan, is that you?");
                     self.sleep(1);
                     println!("J/K, I know it is!\nWho else is going to choose dumbcakes!");
                 }
@@ -321,6 +322,7 @@ impl Michael {
         self.age();
         self.madlib();
         self.designer();
+        #[cfg(feature = "dadjokes")]
         self.icanhazdadjoke();
         self.lastgame();
         self.muffincakes();
