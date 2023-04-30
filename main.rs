@@ -50,14 +50,14 @@ impl Michael {
 
     fn name(&self) {
         let username = self.input("What's your name?: ");
-        println!("Nice to meet you {}", username.trim());
+        println!("Nice to meet you {}", username);
     }
 
     fn distro(&self) {
         // Get the name of the players favorite distro
         let distro = self.input("What's like your favorite like distro? [Enter it here]: ");
         self.sleep(2);
-        println!("Oh so you like {}. That's an ok distro but I prefer to use Rebecca Black Linux because I'm a hipster.", distro.trim());
+        println!("Oh so you like {}. That's an ok distro but I prefer to use Rebecca Black Linux because I'm a hipster.", distro);
         self.sleep(2);
         println!("Is it Friday? Cause I love gettin' down on Friday!");
         self.sleep(2);
@@ -65,7 +65,7 @@ impl Michael {
 
     fn age(&self) {
         loop {
-            // Get users age
+            // Get user's age
             let age_quest = self.input("How old are you anyways?: ");
             // Error check for integer
             match age_quest.trim().parse::<i32>() {
